@@ -1,0 +1,7 @@
+# dsh-close-to-quit bundle layer: inserts the close-behavior plugin row.
+# The Host half owns the preference read/write route; the Client half draws the
+# Settings > General row. Requires the lib/main.js patch from this project,
+# which is what actually acts on the stored value.
+- insert:
+    - id: close-to-quit
+      name: dsh-close-to-quit

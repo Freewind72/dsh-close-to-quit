@@ -1,0 +1,14 @@
+# Keep line endings stable across Windows and Unix checkouts.
+* text=auto eol=lf
+
+# PowerShell scripts must keep CRLF for Windows compatibility.
+*.ps1 text eol=crlf
+*.cjs text eol=lf
+*.mjs text eol=lf
+*.js text eol=lf
+
+# Binary assets.
+*.svg text eol=lf
+*.tgz binary
+*.asar binary
+*.exe binary

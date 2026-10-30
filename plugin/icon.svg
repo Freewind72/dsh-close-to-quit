@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Close button behavior">
+  <rect x="6" y="10" width="52" height="40" rx="6" fill="#2b2f36"/>
+  <rect x="6" y="10" width="52" height="9" rx="6" fill="#3b414b"/>
+  <rect x="6" y="15" width="52" height="4" fill="#3b414b"/>
+  <circle cx="13.5" cy="14.5" r="2.2" fill="#ff5f57"/>
+  <circle cx="20.5" cy="14.5" r="2.2" fill="#febc2e"/>
+  <circle cx="27.5" cy="14.5" r="2.2" fill="#28c840"/>
+  <path d="M44 17.5 l7 7 M51 17.5 l-7 7" stroke="#e6e9ef" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M20 34 h18 M20 41 h12" stroke="#7b8290" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M40 44 v6 M36.5 47 l3.5 3.5 3.5 -3.5" stroke="#4c9aff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

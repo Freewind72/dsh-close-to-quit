@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Close Button Behavior",
+    "description": "Choose whether the desktop window's close button hides the app to the tray or quits it, from Settings > General."
+  }
+}

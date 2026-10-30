@@ -1,0 +1,17 @@
+node_modules/
+*.tgz
+
+# Generated from the installed archive; never commit DeepSeek's own code.
+shell-patch/main.orig.js
+shell-patch/main.patched.js
+shell-patch/main.orig.mjs
+shell-patch/main.patched.mjs
+
+# The original archive backup is ~182 MB and must stay on the machine, not in git.
+*.bak-close-to-quit
+
+# Reverse-engineering scratch space.
+work/
+
+# Verifier scratch output.
+tests/.tmp/
