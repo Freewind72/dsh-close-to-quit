@@ -1,0 +1,61 @@
+{
+  "name": "dsh-close-to-quit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "让 DeepSeek Harness 桌面端的窗口关闭按钮（×）可以退出应用，开关在「设置 → 通用」。",
+  "license": "MIT",
+  "author": "Zeph (Freewind72)",
+  "homepage": "https://github.com/Freewind72/dsh-close-to-quit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freewind72/dsh-close-to-quit.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "desktop",
+    "tray",
+    "close-button"
+  ],
+  "exports": {
+    ".": "./plugin/index.js",
+    "./client": "./plugin/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./plugin/locale/*.json",
+    "./icon": "./plugin/icon.svg"
+  },
+  "files": [
+    "plugin/index.js",
+    "plugin/client.js",
+    "plugin/cordis.patch.yml",
+    "plugin/locale/*.json",
+    "plugin/icon.svg",
+    "shell-patch/*.cjs",
+    "shell-patch/*.ps1",
+    "tests/**/*.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./plugin/cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node tests/bundle-installed.mjs",
+    "patch:build": "node shell-patch/build-patch.cjs",
+    "pack:plugin": "npm pack --pack-destination dist"
+  }
+}
