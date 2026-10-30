@@ -8,6 +8,15 @@ Default stays the shipped behaviour (hide to tray), so nothing changes until you
 The row renders as **"Window close button"** with a switch and a restart hint, between
 "Link opening" and "Composer enter" in the General list.
 
+> **中文开工速查**（给人看的口径见
+> [knowledge/dsh-close-to-quit/README.md](../../knowledge/dsh-close-to-quit/README.md)）
+>
+> - 改行为的是 `shell-patch/`，画开关的是 `plugin/`，**两层缺一不可**
+> - 上手顺序：`extract-main.cjs` → `build-patch.cjs` → `apply-patch.cjs`（先完全退出应用）
+> - 补丁必须**等长**（516716 字节），否则会破坏 asar 头部哈希
+> - 改完跑 `tests/` 下四个脚本，全 `ALL PASS` 才算数
+> - `work/` 是逆向草稿，不入库；`main.orig.js` / `main.patched.js` 也不入库
+
 ---
 
 ## What this is
