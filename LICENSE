@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This licence covers only the original code in this repository (the Cordis
-plugin and the patch/test scripts). It does not cover DeepSeek Harness or any
-part of it: this project modifies an installed copy of that application in
-place and neither ships nor redistributes its code. The terms that application
-ships with govern it.

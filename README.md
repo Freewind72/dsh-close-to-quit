@@ -236,5 +236,10 @@ and both are regenerable with the two scripts above.
 
 ## Licence
 
-MIT for this project's own code. It patches a third-party application in place; that
-application's own licence governs its code, which this repo neither ships nor redistributes.
+MIT — see [LICENSE](LICENSE). That licence covers only this project's own code (the Cordis
+plugin and the patch/test scripts).
+
+It does **not** cover DeepSeek Harness or any part of it. This project modifies an installed
+copy of that application in place; it neither ships nor redistributes its code, and the terms
+that application ships with govern it. `shell-patch/main.orig.js` is generated locally from
+your own installation and is git-ignored for that reason.
