@@ -1,6 +1,9 @@
 node_modules/
 *.tgz
 
+# Release artifacts are attached to a GitHub Release, not committed.
+dist/
+
 # Generated from the installed archive; never commit DeepSeek's own code.
 shell-patch/main.orig.js
 shell-patch/main.patched.js
