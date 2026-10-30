@@ -118,6 +118,9 @@ node tests/shell-behaviour.mjs "E:/dsh/resources/app.asar"
 
 # the plugin's Host half: reads, writes, refusals, three desktop states
 node tests/host-route.mjs
+
+# is the bundle actually installed where the loader will look?
+node tests/bundle-installed.mjs
 ```
 
 Set `DSH_ASAR` instead of passing a path if you prefer:
@@ -213,10 +216,11 @@ Disable or remove the plugin through the plugin manager separately.
 │   ├── apply-patch.cjs      # write the patch, verifying the header hash
 │   └── rollback.ps1         # restore from backup
 └── tests/
-    ├── lib/asar.mjs         # dependency-free asar reader
-    ├── verify-archive.mjs   # header integrity, entry size, payload contents
-    ├── shell-behaviour.mjs  # real readDesktopSettings + real close handler
-    └── host-route.mjs       # plugin Host half, refusals, desktop states
+    ├── lib/asar.mjs          # dependency-free asar reader
+    ├── verify-archive.mjs    # header integrity, entry size, payload contents
+    ├── shell-behaviour.mjs   # real readDesktopSettings + real close handler
+    ├── host-route.mjs        # plugin Host half, refusals, desktop states
+    └── bundle-installed.mjs  # is the bundle resolvable where the loader looks?
 ```
 
 `main.orig.js` and `main.patched.js` are **not committed**: the first is DeepSeek's own code,
@@ -235,6 +239,12 @@ and both are regenerable with the two scripts above.
   before patching lacks it, so the plugin reports three states — `patched`, `shell`,
   `standalone` — and tells the user to restart instead of claiming nothing can be changed.
 - **Never rewrite header offsets by hand.** That breaks the `ELECTRONASAR` hash.
+- **If you install the plugin from this directory, it is a `link:` dependency.** The profile's
+  `package.json` records an absolute path to `plugin/`. Renaming or moving this directory
+  silently breaks the plugin: the loader cannot read `package.json`, so the row simply
+  disappears with no error. Change the `link:` path and re-run `pnpm install` *before* moving
+  anything, and confirm with `node tests/bundle-installed.mjs` rather than trusting
+  `list_plugins`.
 
 ## Not verified
 
